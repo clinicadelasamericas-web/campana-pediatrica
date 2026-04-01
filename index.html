@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campaña Mes del Niño 2026 – Clínica de las Américas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blue:    #1A6DB5;
+      --green:   #2DAB66;
+      --orange:  #F47B20;
+      --purple:  #8C3F9B;
+      --teal:    #00AEAE;
+      --yellow:  #F5C518;
+      --light:   #F4F9FF;
+      --white:   #ffffff;
+      --text:    #1E2D3D;
+      --muted:   #5A7080;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1A6DB5 0%, #00AEAE 60%, #2DAB66 100%);
+      color: white;
+      padding: 60px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+      background-size: 60px 60px;
+    }
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .18;
+    }
+    .hero-blob.b1 { width:340px;height:340px;background:var(--purple);top:-100px;left:-80px; }
+    .hero-blob.b2 { width:260px;height:260px;background:var(--orange);bottom:-80px;right:-60px; }
+
+    .clinic-logo-wrap {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 12px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .clinic-logo-wrap img { height: 70px; display: block; }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: auto; }
+
+    .clinic-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1.5px solid rgba(255,255,255,.4);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+    .hero h1 span { color: var(--yellow); }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      font-weight: 600;
+      opacity: .92;
+      margin-bottom: 28px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.18);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+      50%      { box-shadow: 0 10px 36px rgba(0,0,0,.28); }
+    }
+
+    .hero-emojis { font-size: 2.2rem; margin-top: 30px; letter-spacing: .2em; animation: wiggle 3s ease-in-out infinite; }
+    @keyframes wiggle {
+      0%,100% { transform: rotate(-3deg); }
+      50%      { transform: rotate(3deg); }
+    }
+
+    /* ── CONSULTAS SECTION ── */
+    .section { max-width: 980px; margin: 0 auto; padding: 56px 20px; }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 36px; }
+
+    /* consulta banner */
+    .consulta-banner {
+      background: linear-gradient(120deg, var(--blue), var(--teal));
+      border-radius: 20px;
+      padding: 32px 28px;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 30px rgba(26,109,181,.28);
+      margin-bottom: 44px;
+    }
+    .consulta-banner h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+    .consulta-banner p { font-size: 1rem; opacity: .88; margin-top: 6px; }
+    .price-tag {
+      background: var(--white);
+      color: var(--orange);
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      padding: 14px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.14);
+      white-space: nowrap;
+    }
+
+    /* specialties pills */
+    .specs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 2px solid;
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 700;
+      font-size: .92rem;
+      transition: transform .2s, box-shadow .2s;
+      cursor: default;
+    }
+    .spec-pill:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+    .spec-pill.c1 { border-color: var(--blue);   color: var(--blue); }
+    .spec-pill.c2 { border-color: var(--green);  color: var(--green); }
+    .spec-pill.c3 { border-color: var(--purple); color: var(--purple); }
+    .spec-pill.c4 { border-color: var(--orange); color: var(--orange); }
+    .spec-pill.c5 { border-color: var(--teal);   color: var(--teal); }
+
+    /* ── DOCTORS TABLE ── */
+    .doctors-wrap {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+    .doctors-wrap table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    .doctors-wrap thead tr { background: linear-gradient(90deg, var(--blue), var(--teal)); color: white; }
+    .doctors-wrap thead th { padding: 14px 16px; text-align: left; font-weight: 700; letter-spacing: .03em; }
+    .doctors-wrap tbody tr { border-bottom: 1px solid #EDF2F8; transition: background .15s; }
+    .doctors-wrap tbody tr:hover { background: #F0F8FF; }
+    .doctors-wrap tbody td { padding: 12px 16px; }
+    .doctors-wrap tbody td:first-child { color: var(--muted); font-size: .82rem; }
+    .badge-spec {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      background: #E8F4FD;
+      color: var(--blue);
+    }
+    .badge-spec.endo   { background:#F3E8FD; color:var(--purple); }
+    .badge-spec.gastro { background:#E8FDF2; color:var(--green); }
+    .badge-spec.neuro  { background:#FEF3E8; color:var(--orange); }
+    .badge-spec.infect { background:#E8FDFD; color:var(--teal); }
+    .badge-spec.oftal  { background:#FDF8E8; color:#B08A00; }
+    .badge-spec.fono   { background:#FDE8EE; color:#C0184A; }
+    .badge-spec.cardio { background:#EDE8FD; color:#5E35B1; }
+
+    /* ── OFFERS GRID ── */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
+    }
+    .offer-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .offer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(0,0,0,.13); }
+    .offer-card-header {
+      padding: 18px 20px 14px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    .offer-card-header.lab   { background: linear-gradient(120deg, var(--blue), #4EA8DE); }
+    .offer-card-header.prequx{ background: linear-gradient(120deg, var(--purple), #C76DD0); }
+    .offer-card-header.oftal { background: linear-gradient(120deg, #B08A00, var(--yellow)); color: var(--text); }
+    .offer-card-header.fono  { background: linear-gradient(120deg, var(--teal), var(--green)); }
+
+    .offer-card-body { padding: 16px 20px; }
+    .offer-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed #E8EFF8;
+      font-size: .92rem;
+    }
+    .offer-item:last-child { border-bottom: none; }
+    .offer-item-name { color: var(--text); }
+
+    .offer-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--light);
+      padding: 12px 20px;
+      font-weight: 800;
+    }
+    .offer-total .price { font-family: 'Poppins', sans-serif; font-size: 1.3rem; color: var(--blue); }
+    .offer-total .price.purple { color: var(--purple); }
+    .offer-total .price.yellow { color: #9A7200; }
+    .offer-total .price.teal   { color: var(--teal); }
+
+    /* ── DIVIDER ── */
+    .wave-divider { width:100%; overflow:hidden; line-height:0; }
+    .wave-divider svg { display:block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(120deg, var(--blue), var(--teal));
+      color: white;
+      text-align: center;
+      padding: 36px 20px;
+    }
+    footer .logo-text { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; letter-spacing:.02em; }
+    footer p { font-size:.9rem; opacity:.82; margin-top:8px; }
+
+    /* ── OTROS ESPECIALISTAS ── */
+    .specialists-section {
+      background: linear-gradient(180deg, #EEF6FF 0%, var(--light) 100%);
+      padding: 56px 0;
+    }
+    .search-bar-wrap {
+      max-width: 520px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+    .search-bar-wrap input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 2px solid #D0E6F8;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      background: white;
+      outline: none;
+      box-shadow: 0 4px 16px rgba(26,109,181,.1);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .search-bar-wrap input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 4px 20px rgba(26,109,181,.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      pointer-events: none;
+    }
+    .spec-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .filter-pill {
+      padding: 5px 16px;
+      border-radius: 50px;
+      border: 1.5px solid #C8DFF4;
+      background: white;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--blue);
+      cursor: pointer;
+      transition: all .18s;
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+    .specialists-grid {
+      width: 100%;
+    }
+    .sp-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      font-size: .92rem;
+    }
+    .sp-table thead tr {
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+      color: white;
+    }
+    .sp-table thead th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 700;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    .sp-table tbody tr {
+      border-bottom: 1px solid #EDF2F8;
+      transition: background .15s;
+    }
+    .sp-table tbody tr:hover { background: #F0F8FF; }
+    .sp-table tbody td { padding: 10px 16px; vertical-align: middle; }
+    .sp-table tbody td:first-child { color: var(--muted); font-size: .82rem; width: 40px; text-align: center; }
+    .sp-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: .76rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .sp-badge.c-blue   { background:#E8F4FD; color:var(--blue); }
+    .sp-badge.c-green  { background:#E8FDF2; color:var(--green); }
+    .sp-badge.c-orange { background:#FEF3E8; color:var(--orange); }
+    .sp-badge.c-purple { background:#F3E8FD; color:var(--purple); }
+    .sp-badge.c-teal   { background:#E8FDFD; color:var(--teal); }
+    .sp-schedule-cell { font-size: .78rem; color: var(--muted); line-height: 1.6; }
+    .sp-price-cell {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--blue);
+      white-space: nowrap;
+      font-size: .88rem;
+    }
+    .no-results {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      padding: 40px 0;
+      display: none;
+    }
+    @media (max-width: 640px) {
+      .consulta-banner { flex-direction: column; text-align: center; }
+      .price-tag { font-size: 1.6rem; }
+      .doctors-wrap table { font-size: .82rem; }
+      .doctors-wrap thead th, .doctors-wrap tbody td { padding: 10px 10px; }
+    }
+
+    /* entry animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── CONTACTO ── */
+    .contact-section {
+      background: linear-gradient(135deg, #0D4F8B 0%, #00AEAE 100%);
+      padding: 56px 20px;
+      color: white;
+    }
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-inner h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .contact-inner > p { opacity: .88; font-size: 1rem; margin-bottom: 28px; }
+    .phone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: var(--blue);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      padding: 14px 36px;
+      border-radius: 50px;
+      box-shadow: 0 6px 28px rgba(0,0,0,.22);
+      margin-bottom: 40px;
+      letter-spacing: .04em;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .option-card {
+      background: rgba(255,255,255,.13);
+      border: 1.5px solid rgba(255,255,255,.28);
+      border-radius: 16px;
+      padding: 18px 14px;
+      backdrop-filter: blur(6px);
+      transition: background .2s, transform .2s;
+      cursor: default;
+    }
+    .option-card:hover { background: rgba(255,255,255,.22); transform: translateY(-3px); }
+    .option-number {
+      display: inline-block;
+      padding: 5px 18px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: .95rem;
+      margin-bottom: 10px;
+    }
+    .num-blue   { background: var(--blue);   color: white; }
+    .num-teal   { background: #007f7f;       color: white; }
+    .num-orange { background: var(--orange); color: white; }
+    .num-green  { background: var(--green);  color: white; }
+    .num-purple { background: var(--purple); color: white; }
+    .option-label { font-size: .9rem; font-weight: 700; line-height: 1.4; opacity: .95; }
+    .contact-note {
+      background: rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: .9rem;
+      opacity: .92;
+      max-width: 560px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,.22);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-inner">
+    <div class="clinic-logo-wrap">
+      <img src="logo.png" alt="Clínica de las Américas" />
+    </div>
+    <h1>Campaña <span>Mes del Niño</span><br>Abril 2026</h1>
+    <p class="hero-sub">Cuida la salud de tus hijos con especialistas pediátricos de primer nivel</p>
+    <div class="hero-pill">📅 Del 1 al 18 de Abril · Consultas a solo 150 Bs</div>
+    <div class="hero-emojis">👧🏽👦🏼🧒🏿👶🏻</div>
+  </div>
+</header>
+
+<!-- ══════════ CONSULTAS MÉDICAS ══════════ -->
+<section class="section fade-up">
+  <h2 class="section-title">Consultas Médicas Pediátricas</h2>
+  <p class="section-sub">9 especialidades disponibles durante la campaña</p>
+
+  <div class="consulta-banner">
+    <div>
+      <h2>Consultas para niños</h2>
+      <p>📅 Del 1 al 18 de Abril de 2026 · Válido para todas las especialidades</p>
+    </div>
+    <div class="price-tag">150 Bs</div>
+  </div>
+
+  <div class="specs-grid">
+    <span class="spec-pill c1">🔬 Cirugía Pediátrica</span>
+    <span class="spec-pill c5">❤️ Cirugía Tórax y Cardio Pediátrico</span>
+    <span class="spec-pill c3">🧬 Endocrinología Pediátrica</span>
+    <span class="spec-pill c2">🫁 Gastroenterología Pediátrica</span>
+    <span class="spec-pill c4">🧠 Neuro Pediatría</span>
+    <span class="spec-pill c1">👨‍⚕️ Pediatría General</span>
+    <span class="spec-pill c2">🦠 Infectología Pediátrica</span>
+    <span class="spec-pill c4">👁️ Oftalmología</span>
+    <span class="spec-pill c5">👂 Fonoaudiología</span>
+  </div>
+</section>
+
+<!-- ══════════ MÉDICOS ══════════ -->
+<section style="background:white; padding: 0 0 56px;">
+  <div class="section fade-up" style="padding-top:0;">
+    <h2 class="section-title">Médicos Participantes</h2>
+    <p class="section-sub">Equipo de especialistas certificados — Mes del Niño 2026</p>
+    <div class="doctors-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Médico</th>
+            <th>Especialidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Roberto Gamez Arias</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>2</td><td>Claudia Lorena Jauregui Paravicini</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>3</td><td>Luis Ernesto Dellien Bianchi</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>4</td><td>German Limbert Quevedo Perales</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>5</td><td>Juan Marcelo Ulunque Anturiano</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>6</td><td>Alfredo Paz Quiroz</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>7</td><td>Rene Cardozo Molina</td><td><span class="badge-spec">Cirugía Pediátrica</span></td></tr>
+          <tr><td>8</td><td>Carlos Eduardo Brockmann Rojas</td><td><span class="badge-spec cardio">Cirugía Tórax y Cardio Pediátrico</span></td></tr>
+          <tr><td>9</td><td>Cynthia Andrea Badani Olmos</td><td><span class="badge-spec endo">Endocrinología Pediátrica</span></td></tr>
+          <tr><td>10</td><td>Jose Herman Avendaño Carballo</td><td><span class="badge-spec gastro">Gastroenterología Pediátrica</span></td></tr>
+          <tr><td>11</td><td>Lourdes Ivanna Nuñez Antelo</td><td><span class="badge-spec neuro">Neuro Pediatría</span></td></tr>
+          <tr><td>12</td><td>Ana Karenina Nuñez del Prado Salvago</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>13</td><td>Rosemary Abasto Vega</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>14</td><td>Carlos Alberto Paz Roman</td><td><span class="badge-spec infect">Infectología Pediátrica</span></td></tr>
+          <tr><td>15</td><td>Ivany Burgos Alconz</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>16</td><td>Marioly Chavez Vincenti</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>17</td><td>Barbara Kathryn Barbehito Espinoza</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>18</td><td>Varinia Nuñez Pedraza</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>19</td><td>Marcia Ximena Serrano Landivar</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>20</td><td>Carlos Freddy Arellano Avila</td><td><span class="badge-spec">Pediatría</span></td></tr>
+          <tr><td>21</td><td>Carlos Freddy Arellano Avila</td><td><span class="badge-spec oftal">Oftalmología</span></td></tr>
+          <tr><td>22</td><td>David Alejandro Soto Rojas</td><td><span class="badge-spec fono">Fonoaudiología</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WAVE ══════════ -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" style="height:50px;fill:white;">
+    <path d="M0,0 C300,60 900,0 1200,50 L1200,0 Z"/>
+  </svg>
+</div>
+
+<!-- ══════════ OFERTAS DE CAMPAÑA ══════════ -->
+<section class="section fade-up">
+  <h2 class="section-title">Ofertas de Campaña</h2>
+  <p class="section-sub">Exámenes y estudios a precios especiales durante el Mes del Niño</p>
+
+  <div class="offers-grid">
+
+    <!-- Perfil Pediátrico -->
+    <div class="offer-card">
+      <div class="offer-card-header lab">🧪 Perfil Pediátrico</div>
+      <div class="offer-card-body">
+        <div class="offer-item"><span class="offer-item-name">Hemograma completo</span></div>
+        <div class="offer-item"><span class="offer-item-name">Exámen General de Orina</span></div>
+        <div class="offer-item"><span class="offer-item-name">Glucosa</span></div>
+        <div class="offer-item"><span class="offer-item-name">Parasitológico Simple</span></div>
+      </div>
+      <div class="offer-total">
+        <span>Total Perfil Pediátrico</span>
+        <span class="price">Bs 164,35</span>
+      </div>
+    </div>
+
+    <!-- Prequirúrgicos -->
+    <div class="offer-card">
+      <div class="offer-card-header prequx">🏥 Exámenes Prequirúrgicos</div>
+      <div class="offer-card-body">
+        <div class="offer-item"><span class="offer-item-name">Tiempo de Coagulación</span></div>
+        <div class="offer-item"><span class="offer-item-name">Urea</span></div>
+        <div class="offer-item"><span class="offer-item-name">Creatinina</span></div>
+      </div>
+      <div class="offer-total">
+        <span>Total Prequirúrgicos</span>
+        <span class="price purple">Bs 109,08</span>
+      </div>
+    </div>
+
+    <!-- Oftalmología -->
+    <div class="offer-card">
+      <div class="offer-card-header oftal">👁️ Campaña Oftalmología</div>
+      <div class="offer-card-body">
+        <div class="offer-item"><span class="offer-item-name">Biomicroscopía</span></div>
+        <div class="offer-item"><span class="offer-item-name">Revisión del fondo de ojo</span></div>
+        <div class="offer-item"><span class="offer-item-name">Motilidad ocular</span></div>
+        <div class="offer-item"><span class="offer-item-name">Autorrefractometría</span></div>
+        <div class="offer-item"><span class="offer-item-name">Medición de lentes</span></div>
+        <div style="margin-top:10px;font-size:.82rem;color:var(--muted);text-align:center;">📌 Incluye Procedimiento + Consulta</div>
+      </div>
+      <div class="offer-total">
+        <span>Total Oftalmología</span>
+        <span class="price yellow">Bs 150,00</span>
+      </div>
+    </div>
+
+    <!-- Fonoaudiología -->
+    <div class="offer-card">
+      <div class="offer-card-header fono">👂 Campaña Fonoaudiología</div>
+      <div class="offer-card-body">
+        <div class="offer-item">
+          <span class="offer-item-name">Audiometría Tonal</span>
+          <strong style="color:var(--teal)">Bs 290,00</strong>
+        </div>
+        <div class="offer-item">
+          <span class="offer-item-name">Impedanciometría</span>
+          <strong style="color:var(--teal)">Bs 215,00</strong>
+        </div>
+      </div>
+      <div class="offer-total" style="background:#E8FDFD;">
+        <span>Estudios disponibles</span>
+        <span class="price teal">Desde Bs 215</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ OTROS ESPECIALISTAS ══════════ -->
+<section class="specialists-section">
+  <div class="section" style="padding-top:0; padding-bottom:0;">
+    <h2 class="section-title fade-up">También Puedes Agendar con Otros Especialistas</h2>
+    <p class="section-sub fade-up">Consulta disponible todo el año · Agenda tu cita con nuestros médicos &nbsp;·&nbsp; <strong id="spCounter" style="color:var(--blue)"></strong></p>
+
+    <div class="search-bar-wrap fade-up">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="spSearch" placeholder="Buscar médico o especialidad…" oninput="filterSpecialists()" />
+    </div>
+
+    <div class="spec-filter-pills fade-up" id="filterPills">
+      <button class="filter-pill active" onclick="setFilter('', this)">Todos</button>
+      <button class="filter-pill" onclick="setFilter('CIRUGÍA GENERAL', this)">Cir. General</button>
+      <button class="filter-pill" onclick="setFilter('CIRUGÍA PEDIÁTRICA', this)">Cir. Pediátrica</button>
+      <button class="filter-pill" onclick="setFilter('CIRUGÍA PLÁSTICA', this)">Cir. Plástica</button>
+      <button class="filter-pill" onclick="setFilter('CARDIOVASCULAR', this)">Cardiovascular</button>
+      <button class="filter-pill" onclick="setFilter('PEDIATRÍA', this)">Pediatría</button>
+      <button class="filter-pill" onclick="setFilter('GINECOLOGÍA', this)">Ginecología</button>
+      <button class="filter-pill" onclick="setFilter('TRAUMATOLOGÍA', this)">Traumatología</button>
+      <button class="filter-pill" onclick="setFilter('NEUROCIRUGÍA', this)">Neurocirugía</button>
+      <button class="filter-pill" onclick="setFilter('NEUROLOGÍA', this)">Neurología</button>
+      <button class="filter-pill" onclick="setFilter('CARDIOLOGÍA', this)">Cardiología</button>
+      <button class="filter-pill" onclick="setFilter('NEFROLOGÍA', this)">Nefrología</button>
+      <button class="filter-pill" onclick="setFilter('ENDOCRINOLOGÍA', this)">Endocrinología</button>
+      <button class="filter-pill" onclick="setFilter('GASTROENTEROLOGÍA', this)">Gastroenterología</button>
+      <button class="filter-pill" onclick="setFilter('UROLOGÍA', this)">Urología</button>
+      <button class="filter-pill" onclick="setFilter('ONCOLOGÍA', this)">Oncología</button>
+      <button class="filter-pill" onclick="setFilter('PSICOLOGÍA', this)">Psicología</button>
+      <button class="filter-pill" onclick="setFilter('MEDICINA INTERNA', this)">Med. Interna</button>
+      <button class="filter-pill" onclick="setFilter('OFTALMOLOGÍA', this)">Oftalmología</button>
+      <button class="filter-pill" onclick="setFilter('NUTRICIONISTA', this)">Nutrición</button>
+      <button class="filter-pill" onclick="setFilter('NEUMOLOGÍA', this)">Neumología</button>
+      <button class="filter-pill" onclick="setFilter('OTORRINOLARINGOLOGÍA', this)">Otorrino</button>
+      <button class="filter-pill" onclick="setFilter('DERMATOLOGÍA', this)">Dermatología</button>
+      <button class="filter-pill" onclick="setFilter('INFECTOLOGÍA', this)">Infectología</button>
+      <button class="filter-pill" onclick="setFilter('HEMATOLOGÍA', this)">Hematología</button>
+      <button class="filter-pill" onclick="setFilter('REUMATOLOGÍA', this)">Reumatología</button>
+    </div>
+
+    <div class="specialists-grid" id="specialistsGrid">
+      <table class="sp-table" id="spTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Médico</th>
+            <th>Especialidad</th>
+            <th>Horarios</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody id="spTableBody"></tbody>
+      </table>
+      <div class="no-results" id="noResults">😔 No se encontraron resultados</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LÍNEA GRATUITA / CONTACTO ══════════ -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2>📞 ¿Necesitas más información?</h2>
+    <p>Contáctanos a través de nuestra <strong>línea gratuita</strong> y te atenderemos con gusto</p>
+
+    <div class="phone-badge">
+      📲 800 101055
+    </div>
+
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-number num-blue">MARQUE 1</div>
+        <div class="option-label">📅 Programar citas médicas</div>
+      </div>
+      <div class="option-card">
+        <div class="option-number num-teal">MARQUE 2</div>
+        <div class="option-label">🏥 Acceder a información general de la Clínica</div>
+      </div>
+      <div class="option-card">
+        <div class="option-number num-orange">OPCIÓN 3</div>
+        <div class="option-label">💰 Gestionar Cotizaciones</div>
+      </div>
+      <div class="option-card">
+        <div class="option-number num-green">OPCIÓN 4</div>
+        <div class="option-label">📝 Realizar sugerencias o Reclamos</div>
+      </div>
+      <div class="option-card">
+        <div class="option-number num-purple">OPCIÓN 0</div>
+        <div class="option-label">🎧 Hablar con un Operador</div>
+      </div>
+    </div>
+
+    <div class="contact-note">
+      ⭐ Al finalizar podrás calificarnos e informarnos sobre tu experiencia en CDLA
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div style="display:inline-block;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px 20px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+    <img src="logo.png" alt="Clínica de las Américas" style="height:50px;display:block;" />
+  </div>
+  <p>Campaña Mes del Niño · Abril 2026</p>
+  <p style="margin-top:14px; font-size:.82rem; opacity:.6;">Precios de campaña válidos del 1 al 18 de Abril de 2026</p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Specialists Data (listado completo) ──
+  const specialists = [
+    {name:"Abraham Limbert Schayman Pino",specialty:"CIRUGÍA PLÁSTICA",schedule:"Lunes 10:00-10:59 A7 · Miércoles 10:01-10:59 A2",price:"300 Bs"},
+    {name:"Adabel Marañon Limon",specialty:"NEFROLOGÍA",schedule:"",price:"250 Bs"},
+    {name:"Adhemar Merida Arenas",specialty:"NEUROCIRUGÍA",schedule:"",price:"350 Bs"},
+    {name:"Adjanira Chaves de Sousa",specialty:"TRANSPLANTE CAPILAR",schedule:"Martes 13:00-14:59 B9 · Jueves 13:00-14:59 B9",price:"300 Bs"},
+    {name:"Adolfo Roberto Zapata Aramayo",specialty:"CIRUGÍA GENERAL",schedule:"Miércoles 10:30-12:30 B9",price:"300 Bs"},
+    {name:"Adriana Bejarano Lopez",specialty:"ENDOCRINOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Ady Tereza Gil Mendia de Webber",specialty:"PSICOLOGÍA",schedule:"Lunes 14:00-18:00 S/C · Miércoles 09:00-12:00 B3 · Viernes 14:00-17:00 B3",price:"300 Bs"},
+    {name:"Aldo Miguel Caballero Chavez",specialty:"PEDIATRÍA",schedule:"Lunes 09:00-10:59 C10 · Viernes 09:00-10:30 C10 · Viernes 14:00-15:59 C10",price:"250 Bs"},
+    {name:"Alejandro Enrique Ramirez Medeiros",specialty:"UROLOGÍA",schedule:"Martes 17:00-20:00 PP · Jueves 17:00-20:00 PP",price:"400 Bs"},
+    {name:"Alejandro Sengoku Cadima",specialty:"NEFROLOGÍA",schedule:"Miércoles 14:00-16:00 Hemodiálisis",price:"300 Bs"},
+    {name:"Alfredo Paz Quiroz",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Lunes 17:00-17:59 A1 · Jueves 16:00-17:00 C7",price:"300 Bs"},
+    {name:"Alvaro Diego Zambrana Torrez",specialty:"CIRUGÍA TÓRAX Y CARDIO PEDIÁTRICO",schedule:"Jueves 09:00-10:59 A7",price:""},
+    {name:"Amine Jose Galeb Villagomez",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Ana Karenina Nuñez del Prado Salvago",specialty:"PEDIATRÍA",schedule:"Martes 08:00-09:59 C8 · Viernes 08:00-10:00 C3",price:"350 Bs"},
+    {name:"Ana Maria Cruz Rojas",specialty:"NEFROLOGÍA",schedule:"",price:""},
+    {name:"Ana Maria Sapag Duran",specialty:"REUMATOLOGÍA",schedule:"Jueves 15:01-16:59 C3",price:"350 Bs"},
+    {name:"Andrea Nathalie Ribera Eguez",specialty:"PSICOLOGÍA",schedule:"Lunes 09:15-12:15 B3 · Lunes 15:00-17:59 B3 · Martes 09:15-12:15 B3 · Martes 15:00-17:59 B3 · Miércoles 10:00-12:15 CHEQ1 · Jueves 09:15-12:15 B3 · Jueves 14:10-18:10 B3",price:"250 Bs"},
+    {name:"Andrea Veronica Trujillo Rojas",specialty:"CIRUGÍA GENERAL",schedule:"Lunes 08:00-09:00 B6 · Miércoles 08:00-08:59 B6",price:"250 Bs"},
+    {name:"Anyelo Ivanoe Amaya Ajuacho",specialty:"NEFROLOGÍA",schedule:"Sábado 08:00-12:00 S/C",price:""},
+    {name:"Arantxa Velasco Salvatierra",specialty:"MEDICINA GENERAL",schedule:"Martes 07:20-10:20 CHEQ2 · Jueves 07:20-10:20 CHEQ1 · Sábado 07:20-10:20 S/C",price:""},
+    {name:"Armando Rojas Godoy",specialty:"MEDICINA INTERNA",schedule:"Lunes 13:45-14:45 C6 · Miércoles 13:45-15:35 C4 · Viernes 13:45-14:45 B7",price:"250 Bs"},
+    {name:"Arturo Barrientos Ferrufino",specialty:"CIRUGÍA CARDIOVASCULAR",schedule:"Miércoles 14:30-16:00 B2",price:"300 Bs"},
+    {name:"Aylin Naimid Limpias Heredia",specialty:"NEUROLOGÍA",schedule:"Lunes 08:00-10:00 C3 · Jueves 08:00-10:00 C6",price:"350 Bs"},
+    {name:"Banny Carolina Zelada Perez",specialty:"TOXICOLOGÍA",schedule:"",price:"400 Bs"},
+    {name:"Barbara Kathryn Barbehito Espinoza",specialty:"PEDIATRÍA",schedule:"Martes 14:00-16:00 C7 · Jueves 14:00-16:00 C7",price:"250 Bs"},
+    {name:"Bozorg Zonneveld von Brunn",specialty:"MEDICINA INTERNA",schedule:"Lunes 17:00-18:30 A2 · Miércoles 16:00-18:30 A2 · Jueves 16:00-18:00 A2",price:"300 Bs"},
+    {name:"Bruno Belchior de Oliveira",specialty:"OTORRINOLARINGOLOGÍA",schedule:"Lunes 15:30-17:00 B5 · Miércoles 15:30-17:00 B5 · Jueves 15:30-17:00 B5 · Lun-Vie 08:30-12:00 B5",price:"400 Bs"},
+    {name:"Carla Ximena Parejas Terrazas",specialty:"PEDIATRÍA",schedule:"Lunes 11:00-13:00 C10 · Viernes 08:00-12:00 C7",price:"350 Bs"},
+    {name:"Carlos Alberto Del Carpio Salces",specialty:"NEUROLOGÍA",schedule:"Lunes 15:30-17:10 C8 · Miércoles 15:30-17:10 C8 · Viernes 15:30-17:10 B10",price:"350 Bs"},
+    {name:"Carlos Alberto Paz Roman",specialty:"PEDIATRÍA",schedule:"Lunes 15:00-19:00 C9 · Miércoles 15:00-19:00 C9 · Jueves 16:01-19:00 C9",price:"350 Bs"},
+    {name:"Carlos Andres Perez Coca",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 09:01-10:00 B6 · Lunes 18:30-20:00 C3 · Martes 19:01-20:00 B6 · Miércoles 09:00-10:00 B7 · Jueves 18:00-20:00 B6 · Viernes 09:00-10:00 B8 · Sábado 10:00-11:00 B6",price:"300 Bs"},
+    {name:"Carlos Daniel Borda Low",specialty:"NEUROCIRUGÍA",schedule:"Viernes 18:00-19:59 C6",price:"400 Bs"},
+    {name:"Carlos Eduardo Aliaga Valenzuela",specialty:"TRAUMATOLOGÍA PEDIÁTRICA",schedule:"Martes 09:00-10:00 C9 · Viernes 09:00-10:59 C9",price:"450 Bs"},
+    {name:"Carlos Eduardo Brockmann Rojas",specialty:"CIRUGÍA TÓRAX Y CARDIO PEDIÁTRICO",schedule:"Miércoles 17:00-18:00 B10 · Viernes 17:00-18:30 A6",price:"300 Bs"},
+    {name:"Carlos Fernando Dabdoub Arrien",specialty:"NEUROCIRUGÍA",schedule:"",price:"350 Bs"},
+    {name:"Carlos Freddy Arellano Avila",specialty:"OFTALMOLOGÍA",schedule:"Lunes 08:00-10:00 B1 · Martes 08:00-10:00 B1 · Miércoles 08:00-10:00 B1 · Jueves 08:00-10:00 B1 · Viernes 08:00-10:00 B1",price:"300 Bs"},
+    {name:"Carlos Mauricio Gómez Marpartida",specialty:"MEDICINA GENERAL",schedule:"Viernes 09:00-11:00 S/C",price:""},
+    {name:"Carlos Omar Lizarazu Mazzó",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 19:00-20:00 C5 · Martes 19:00-20:00 C5 · Miércoles 18:00-20:00 C4",price:"400 Bs"},
+    {name:"Carlos Rodrigo Urquieta Gamon",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Carolina Arrieta Justiniano",specialty:"MEDICINA INTERNA",schedule:"Lunes 11:00-15:00 A2 · Martes 11:00-15:00 A2 · Miércoles 12:00-15:00 A2 · Jueves 11:00-15:00 A2 · Viernes 10:00-15:00 A2 · Sábado 09:00-12:00 A2",price:"350 Bs"},
+    {name:"Charly Franklin Oporto Cossio",specialty:"CIRUGÍA GENERAL",schedule:"Lunes 12:01-13:59 A1 · Martes 10:00-12:00 A1 · Miércoles 14:00-16:00 A1 · Jueves 10:00-11:59 A1 · Viernes 12:01-13:59 A1",price:"250 Bs"},
+    {name:"Christian Fernando Cruz Vilar",specialty:"PEDIATRÍA",schedule:"",price:"250 Bs"},
+    {name:"Christian Jose Morales Suarez",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Jueves 17:01-18:59 A7",price:"400 Bs"},
+    {name:"Cinda Daniela Ureña Cordero",specialty:"CARDIOLOGÍA",schedule:"Miércoles 13:00-15:00 B6 · Jueves 18:01-19:59 B10 · Viernes 13:00-13:59 A7 · Sábado 09:00-10:30 B9",price:"300 Bs"},
+    {name:"Cinthya Coronado Arauz",specialty:"HEPATOLOGÍA",schedule:"Miércoles 13:00-15:00 B7 · Viernes 08:00-10:00 B9",price:"350 Bs"},
+    {name:"Claudia Alicia Abasto Cabrera",specialty:"PEDIATRÍA NEONATOLOGÍA",schedule:"",price:"250 Bs"},
+    {name:"Claudia Carola Vargas Diaz",specialty:"NUTRICIONISTA",schedule:"Martes 14:30-18:00 S/C · Miércoles 08:30-11:30 S/C · Jueves 14:30-18:00 S/C",price:"300 Bs"},
+    {name:"Claudia Cintia Gorena Montalvo",specialty:"NEFROLOGÍA PEDIÁTRICA",schedule:"Martes 17:00-18:00 C7 · Jueves 17:00-18:00 C7",price:"400 Bs"},
+    {name:"Claudia Fabiola Burgos Acosta",specialty:"CIRUGÍA GENERAL",schedule:"Lun-Vie 08:00-09:59 A5",price:"300 Bs"},
+    {name:"Claudia Gabriela Antelo Balcazar",specialty:"MEDICINA INTERNA",schedule:"Martes 14:00-15:00 B10",price:"300 Bs"},
+    {name:"Claudia Lorena Jauregui Paravicini",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"",price:"350 Bs"},
+    {name:"Claudia Maria Jordan Moreno",specialty:"GASTROENTEROLOGÍA",schedule:"Lunes 10:00-12:00 B10 · Martes 08:00-10:00 B10 · Miércoles 10:00-10:30 B10 · Jueves 08:00-10:00 B10",price:"300 Bs"},
+    {name:"Claudia Olivia Gamboa Coimbra",specialty:"ANESTESIOLOGÍA Y TERAPIA DEL DOLOR",schedule:"",price:"300 Bs"},
+    {name:"Cristian Carlos Añez Martinez",specialty:"CIRUGÍA CARDIOVASCULAR",schedule:"Lunes 10:01-12:00 B9 · Viernes 10:01-12:00 B9",price:"500 Bs"},
+    {name:"Cynthia Andrea Badani Olmos",specialty:"ENDOCRINOLOGÍA PEDIÁTRICA",schedule:"Jueves 18:01-20:00 C7",price:"300 Bs"},
+    {name:"Daniel Alejandro Molina Comboni",specialty:"NEFROLOGÍA",schedule:"Lun-Vie 17:30-19:30 B4",price:"350 Bs"},
+    {name:"Daniela Alejandra Gil Loayza",specialty:"MEDICINA FAMILIAR",schedule:"Martes 13:00-15:00 A1 · Miércoles 11:00-13:00 A1",price:"250 Bs"},
+    {name:"Daniela Gonzalez Salazar",specialty:"OFTALMOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"David Alejandro Soto Rojas",specialty:"FONOAUDIOLOGÍA",schedule:"Lunes 08:00-10:00 A6 · Miércoles 08:00-09:00 A1 · Viernes 08:00-09:00 A2",price:"250 Bs"},
+    {name:"Delvic Hoyos Paz",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Jueves 14:00-15:59 C1",price:"250 Bs"},
+    {name:"Denisse Bezerra Guedes",specialty:"TRAUMATOLOGÍA PEDIÁTRICA",schedule:"Martes 15:00-17:00 B10 · Miércoles 10:00-12:00 C9 · Viernes 15:00-17:00 C5",price:"450 Bs"},
+    {name:"Diana Patricia Gutierrez Cabezas",specialty:"CARDIOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Diana Rosario Fernandez Duran",specialty:"CARDIOLOGÍA",schedule:"Martes 17:01-19:00 A8 · Jueves 17:01-19:00 A8 · Sábado 10:00-12:00 C4",price:"300 Bs"},
+    {name:"Diana Yocelin Ribera Arnez",specialty:"PEDIATRÍA",schedule:"",price:"350 Bs"},
+    {name:"Diego Ernesto Quezada Salvatierra",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Sábado 11:30-12:30 B6",price:"250 Bs"},
+    {name:"Diego Mauricio Montenegro Velasco",specialty:"ONCOLOGÍA CLÍNICA",schedule:"Martes 19:00-20:00 B10 · Jueves 19:00-20:00 B8",price:"500 Bs"},
+    {name:"Dolly Paola Soliz Saucedo",specialty:"OFTALMOLOGÍA",schedule:"Lunes 12:30-13:59 B1 · Martes 12:30-13:59 B1 · Miércoles 12:30-13:59 B1 · Jueves 15:00-17:00 B1 · Viernes 15:00-17:00 B1",price:"300 Bs"},
+    {name:"Edgar Lupinta Paredes",specialty:"CARDIOLOGÍA PEDIÁTRICA",schedule:"Martes 13:00-15:00 B2 · Sábado 08:00-09:00 B2",price:"350 Bs"},
+    {name:"Eduardo Arturo Torrez Torrico",specialty:"CARDIOLOGÍA",schedule:"Lunes 17:00-17:59 B10",price:"300 Bs"},
+    {name:"Eduardo Milanesi Nunes Vieira",specialty:"CIRUGÍA BUCO MAXILO FACIAL",schedule:"",price:"300 Bs"},
+    {name:"Eduardo Walter Lizarazu Gutierrez",specialty:"NEUROCIRUGÍA",schedule:"",price:"300 Bs"},
+    {name:"Elba Roxana Heredia de Candia",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Jueves 14:00-15:59 C2",price:"250 Bs"},
+    {name:"Eliana Antelo Arteaga",specialty:"NUTRICIONISTA",schedule:"Miércoles 15:00-18:00 A5 · Jueves 10:30-13:30 A5",price:"350 Bs"},
+    {name:"Eliana Carola Ortuño Ureña",specialty:"PEDIATRÍA",schedule:"Lunes 08:00-12:00 C7 · Martes 08:00-12:00 C7 · Miércoles 09:00-12:00 C7 · Jueves 08:00-12:00 C7 · Sábado 08:30-10:00 C7",price:"350 Bs"},
+    {name:"Emmy Rosse Porcel Capriles",specialty:"CARDIOLOGÍA",schedule:"Martes 08:00-08:59 C3 · Jueves 09:00-09:59 B8 · Sábado 08:00-10:00 C4",price:"400 Bs"},
+    {name:"Enrique Rojas Yavari",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 10:01-12:00 C6 · Jueves 10:00-12:00 B8",price:"300 Bs"},
+    {name:"Erick Alejandro Hornez Fernandez",specialty:"CARDIOLOGÍA",schedule:"Lunes 16:01-17:59 C5 · Miércoles 16:01-17:59 C5",price:"350 Bs"},
+    {name:"Erick Gonzalez Delgado",specialty:"NEUROLOGÍA",schedule:"Lunes 08:30-09:59 C8 · Miércoles 08:30-10:00 C8 · Viernes 08:15-08:45 C8",price:"450 Bs"},
+    {name:"Erik Arrazola Maturano",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 18:01-20:00 C2 · Viernes 08:00-08:59 C1",price:"250 Bs"},
+    {name:"Ernesto Rodolfo Arias Ferreira",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 08:00-10:00 C4 · Jueves 14:00-16:00 C4 · Viernes 16:01-18:00 C3",price:"400 Bs"},
+    {name:"Erwin Roberto Quintanilla Meyer",specialty:"NEUROCIRUGÍA",schedule:"Martes 18:31-20:00 C6 · Jueves 18:31-20:00 C6",price:"300 Bs"},
+    {name:"Fabian Uriel Barja Palenque",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Federico Eduardo Gonzalez Calvo",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 12:00-12:59 B6 · Jueves 17:00-18:00 B6",price:"300 Bs"},
+    {name:"Felipe Ernesto Melgar Cuellar",specialty:"GERIATRÍA",schedule:"Lunes 14:00-16:00 A7 · Viernes 14:00-15:30 C4",price:"450 Bs"},
+    {name:"Fernando Chavez Caballero",specialty:"NEUMOLOGÍA",schedule:"Martes 17:01-17:59 B10",price:"300 Bs"},
+    {name:"Fernando Cortez Ribera",specialty:"TRAUMATOLOGÍA PEDIÁTRICA",schedule:"Lunes 16:10-19:30 B9 · Jueves 16:10-17:30 B2",price:"450 Bs"},
+    {name:"Fernando Molina Lino",specialty:"INFECTOLOGÍA",schedule:"Lun-Vie 12:00-13:00 B8",price:"350 Bs"},
+    {name:"Fernando Molina Pizarro",specialty:"NEUROCIRUGÍA",schedule:"",price:"350 Bs"},
+    {name:"Fernando Pacheco Rojas",specialty:"NEUROCIRUGÍA",schedule:"Lunes 17:30-19:30 C8 · Martes 17:30-19:30 B9 · Miércoles 17:30-19:30 C8 · Jueves 17:30-18:59 B9 · Viernes 18:01-19:30 C8",price:"350 Bs"},
+    {name:"Flor Silvestre Banegas Justiniano",specialty:"ANESTESIOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Freddy Yassir Carrión Orellana",specialty:"CIRUGÍA ONCOLÓGICA",schedule:"Lunes 18:30-20:00 A6 · Viernes 18:30-20:00 C3",price:"350 Bs"},
+    {name:"Gabriel Gerardo Cuellar Caballero",specialty:"NEUROCIRUGÍA",schedule:"Martes 15:00-17:00 C8 · Jueves 15:00-17:00 C8",price:"350 Bs"},
+    {name:"Gabriel Vique Valeriano",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"",price:"300 Bs"},
+    {name:"Geannine Pinto Duran",specialty:"MEDICINA DE TRABAJO",schedule:"Lun-Vie 07:20-10:00 S/C",price:"250 Bs"},
+    {name:"German Antelo Vaca",specialty:"NEUROCIRUGÍA",schedule:"Lunes 15:30-18:30 C6 · Martes 15:30-18:30 C6 · Miércoles 15:30-18:30 C6 · Jueves 15:30-18:30 C6 · Viernes 15:30-17:59 C6",price:"350 Bs"},
+    {name:"German Limbert Quevedo Perales",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Martes 16:01-17:00 C10",price:"350 Bs"},
+    {name:"Gilda Irene Barrera Zuleta",specialty:"ONCOLOGÍA CLÍNICA",schedule:"",price:"250 Bs"},
+    {name:"Gloria Rodriguez Suarez",specialty:"HEMATOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Gretha Montaño Zeballos",specialty:"NEUMOLOGÍA",schedule:"Lunes 14:30-15:40 A6",price:"300 Bs"},
+    {name:"Grover Zenón Chavarría Ponce",specialty:"CIRUGÍA GENERAL",schedule:"",price:"300 Bs"},
+    {name:"Gueider Salas Ferrufino",specialty:"NEUROCIRUGÍA",schedule:"Martes 19:00-20:00 A7 · Jueves 19:00-20:00 A7",price:"300 Bs"},
+    {name:"Guido Javier Pizarro Rivero",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 17:01-18:59 A7 · Miércoles 09:01-10:59 A1",price:"400 Bs"},
+    {name:"Gustavo Adolfo Bustamante Tuero",specialty:"CIRUGÍA COLOPROCTOLOGÍA",schedule:"Miércoles 11:00-12:00 C8 · Viernes 11:00-12:00 C8",price:"250 Bs"},
+    {name:"Gustavo Sauma Ortuño",specialty:"DERMATOLOGÍA ADULTO",schedule:"Lunes 13:30-15:30 B10 · Miércoles 13:30-15:30 B10",price:"400 Bs"},
+    {name:"Gustavo Sebastian Villarroel Flores",specialty:"CIRUGÍA CARDIOVASCULAR",schedule:"Martes 18:01-19:00 B10",price:"350 Bs"},
+    {name:"Heidy Elda Salazar Oliveira",specialty:"NEFROLOGÍA",schedule:"",price:"250 Bs"},
+    {name:"Heiwa Armas Mendoza",specialty:"NEFROLOGÍA",schedule:"Jueves 08:00-09:29 Nefrología",price:"350 Bs"},
+    {name:"Henry Raumir Flores Aguirre",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Jueves 10:00-12:00 S/C · Jueves 15:00-18:00 B10",price:"400 Bs"},
+    {name:"Herman Luis Peinado Noriega",specialty:"NEFROLOGÍA",schedule:"Martes 16:01-17:59 B7 · Jueves 16:01-16:59 B7",price:"400 Bs"},
+    {name:"Hernan Roca Zamora",specialty:"CIRUGÍA GENERAL",schedule:"",price:"300 Bs"},
+    {name:"Hugo Armando Buhezo Arancibia",specialty:"CARDIOLOGÍA",schedule:"Lunes 15:00-16:59 B2 · Lun-Vie 08:30-12:00 B2",price:"300 Bs"},
+    {name:"Ignacio Andres Vaca Valverde",specialty:"CARDIOLOGÍA",schedule:"Lunes 07:30-09:30 C5 · Lunes 17:00-18:30 B7 · Martes 08:00-11:00 C5 · Miércoles 07:30-09:30 C5 · Jueves 08:00-11:00 C5 · Viernes 07:30-08:59 C5",price:"350 Bs"},
+    {name:"Ingryd Escarley Fuertes Hinojosa",specialty:"PEDIATRÍA NEONATOLOGÍA",schedule:"Lunes 14:00-16:00 C10 · Martes 09:00-12:00 C10 · Jueves 09:00-12:00 C10",price:"250 Bs"},
+    {name:"Ivan Gonzalo Medrano Garcia",specialty:"CIRUGÍA GENERAL",schedule:"Miércoles 08:00-09:00 A6 · Jueves 08:00-09:59 A1 · Sábado 08:00-09:59 A1",price:"300 Bs"},
+    {name:"Ivan Rodolfo Rico Lorberg",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Ivana Chiri Porcel",specialty:"ONCOLOGÍA PEDIÁTRICA",schedule:"Lunes 15:00-16:00 C7",price:"300 Bs"},
+    {name:"Ivany Burgos Alconz",specialty:"PEDIATRÍA",schedule:"Miércoles 14:00-16:00 C10 · Sábado 10:00-12:00 C9",price:"250 Bs"},
+    {name:"Jaen Marcelo Marquez Castro",specialty:"UROLOGÍA",schedule:"Lunes 08:00-08:59 A7 · Martes 11:00-12:59 A8 · Jueves 11:00-12:59 A8 · Sábado 09:00-10:59 B8",price:"300 Bs"},
+    {name:"Jahel Evelyn Rodriguez Ferrufino",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Jaime Arturo Velasco Fortun",specialty:"NEUROCIRUGÍA",schedule:"Lunes 17:00-19:00 B6 · Martes 10:00-12:00 C8",price:"350 Bs"},
+    {name:"Jaime Fanor Acosta Caballero",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"",price:"350 Bs"},
+    {name:"Jairo Augusto Prada Barbosa",specialty:"UROLOGÍA",schedule:"Lun-Vie 14:20-16:40 A8",price:"400 Bs"},
+    {name:"Javier Iriarte Mojica",specialty:"CIRUGÍA DE CABEZA Y CUELLO",schedule:"Martes 17:00-19:00 B5 · Miércoles 17:00-19:00 B5",price:"400 Bs"},
+    {name:"Javier Mauricio Mogro Carranza",specialty:"CARDIOLOGÍA",schedule:"Lunes 11:00-13:00 C5 · Miércoles 11:00-13:00 C5 · Viernes 11:00-13:00 C5",price:"350 Bs"},
+    {name:"Javier Mauricio Severiche Rodriguez",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 08:00-09:59 B6 · Viernes 08:00-09:59 B6",price:"350 Bs"},
+    {name:"Javier Pinaya Bejarano",specialty:"CIRUGÍA MAXILOFACIAL",schedule:"Lunes 11:30-13:30 A8 · Jueves 11:30-13:30 A6",price:"300 Bs"},
+    {name:"Jehcil Gabriela Zapata Lazarte",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 08:30-12:00 C2 · Miércoles 09:30-11:30 C2",price:"250 Bs"},
+    {name:"Jesus Rafael Roca Nacif",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 19:00-20:00 C6 · Miércoles 18:00-19:00 C3",price:"300 Bs"},
+    {name:"Jhon Edson Parra Soto",specialty:"CIRUGÍA GENERAL",schedule:"Miércoles 13:00-14:00 A1 · Viernes 10:00-11:00 A1",price:"300 Bs"},
+    {name:"Jhosely Gloria Pizarro Perez",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Martes 14:00-17:59 C1",price:"250 Bs"},
+    {name:"Jimmy Jorge Villarroel Delgadillo",specialty:"NEUROCIRUGÍA",schedule:"",price:"350 Bs"},
+    {name:"Joaquin Ribera Justiniano",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 08:00-09:00 C1 · Miércoles 08:00-09:00 C1",price:"250 Bs"},
+    {name:"Joel Enrique Hurtado Justiniano",specialty:"MEDICINA FAMILIAR",schedule:"Lunes 09:00-10:30 B8 · Lunes 15:00-18:30 B8 · Martes 15:00-18:30 B8 · Miércoles 09:00-10:30 B8 · Jueves 15:00-18:30 B8 · Viernes 15:00-18:30 B8",price:"400 Bs"},
+    {name:"Jorge Edmundo Luis Zabalaga Céspedes",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 15:30-16:59 B6 · Miércoles 15:30-17:00 B6",price:"300 Bs"},
+    {name:"Jorge Eduardo Botello Marin",specialty:"NEUROCIRUGÍA",schedule:"Martes 17:01-19:00 B6 · Viernes 15:01-16:59 B6",price:"350 Bs"},
+    {name:"Jorge Melanio Arredondo Saucedo",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 12:01-12:59 B6 · Viernes 12:01-12:59 B6",price:"300 Bs"},
+    {name:"Jose Alfonso Nava Morales",specialty:"ALERGOLOGÍA Y DERMATOLOGÍA",schedule:"Martes 10:00-12:00 C4 · Jueves 10:00-12:00 B9",price:"250 Bs"},
+    {name:"Jose Antonio Mendez Villagomez",specialty:"NEUMOLOGÍA",schedule:"Martes 10:30-12:20 B7 · Jueves 10:30-12:20 B7",price:"300 Bs"},
+    {name:"Jose Fernando Antelo Hurtado",specialty:"UROLOGÍA",schedule:"Lun-Vie 09:00-10:59 A8",price:"400 Bs"},
+    {name:"Jose Gabriel Moya Rocabado",specialty:"CIRUGÍA COLOPROCTOLOGÍA",schedule:"Lunes 14:00-16:00 A1 · Miércoles 19:01-20:00 A1 · Viernes 14:00-15:59 A1",price:"300 Bs"},
+    {name:"Jose Herman Avendaño Carballo",specialty:"GASTROENTEROLOGÍA PEDIÁTRICA",schedule:"Martes 14:30-16:00 C10 · Jueves 14:00-16:00 C10",price:"350 Bs"},
+    {name:"Jose Junnior Rivero Castedo",specialty:"MEDICINA GENERAL",schedule:"",price:"400 Bs"},
+    {name:"Jose Luis Daga Jordan",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Jose Marcelo Zeballos Guevara",specialty:"PSIQUIATRÍA",schedule:"Miércoles 11:00-14:20 A5 · Viernes 15:00-18:20 A5",price:"300 Bs"},
+    {name:"Jose Martin Daza Aramayo",specialty:"NEUROLOGÍA",schedule:"Lunes 18:01-20:00 B10 · Miércoles 08:00-09:59 A7 · Jueves 18:30-20:00 C4",price:"350 Bs"},
+    {name:"Jose Miguel Cayo Montes",specialty:"CARDIOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Jose Orlando Jaldin Zarate",specialty:"CIRUGÍA CARDIOVASCULAR",schedule:"Viernes 17:00-18:00 A7",price:"300 Bs"},
+    {name:"Jose Ricardo Hong Cheng",specialty:"CIRUGÍA GENERAL",schedule:"Jueves 16:00-16:59 A1",price:"300 Bs"},
+    {name:"Juan Alcibiades Saavedra Quintanilla",specialty:"INFECTOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Juan Antonio Bravo Serrano",specialty:"PEDIATRÍA",schedule:"",price:"250 Bs"},
+    {name:"Juan Carlos Hinojosa Serrate",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 10:00-11:59 B6 · Jueves 10:00-11:59 B6",price:"250 Bs"},
+    {name:"Juan Carlos Suarez Lopez",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 16:01-18:59 C5 · Jueves 17:00-19:00 C5",price:"400 Bs"},
+    {name:"Juan Eiki Nishizawa Takano",specialty:"CIRUGÍA GÁSTRICA",schedule:"Lunes 16:00-18:30 A10 · Martes 16:00-18:30 A10 · Jueves 16:00-18:30 A10 · Viernes 16:00-18:30 A10",price:"500 Bs"},
+    {name:"Juan Manuel Duran Parada",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Jueves 11:00-13:00 C6 · Viernes 11:00-13:00 C6",price:"400 Bs"},
+    {name:"Juan Marcelo Ulunque Anturiano",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Martes 12:01-13:59 C7 · Jueves 12:01-13:59 C7",price:"350 Bs"},
+    {name:"Juan Pablo Hayes Dorado",specialty:"ENDOCRINOLOGÍA PEDIÁTRICA",schedule:"Sábado 09:00-12:00 C10",price:"350 Bs"},
+    {name:"Juan Pablo Santos Duran Azurduy",specialty:"CIRUGÍA GENERAL",schedule:"Miércoles 10:00-12:00 A7",price:"450 Bs"},
+    {name:"Julio Cesar Irigoyen Suarez",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 18:01-18:59 C5 · Miércoles 18:01-19:00 C5",price:"400 Bs"},
+    {name:"Julio Cesar Parada Hurtado",specialty:"MEDICINA INTERNA",schedule:"Sábado 09:00-12:00 A8",price:"250 Bs"},
+    {name:"Julio Guillermo Salek Canido",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Julio Sandro Vela Guerra",specialty:"CIRUGÍA TÓRAX Y CARDIOVASCULAR",schedule:"Martes 16:00-17:00 B2",price:"300 Bs"},
+    {name:"Karen Cespedes Valencia",specialty:"UROLOGÍA PEDIÁTRICA",schedule:"Lunes 08:00-09:59 C9",price:"300 Bs"},
+    {name:"Karen Jhovana Vargas Ticona",specialty:"NEFROLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Karin Cecilia Aponte Santibañez",specialty:"NEUROCIRUGÍA",schedule:"Lunes 09:00-10:00 A7 · Viernes 16:00-18:00 A1 · Sábado 10:00-11:00 A1",price:"300 Bs"},
+    {name:"Katerin Cuellar Garcia",specialty:"CIRUGÍA GENERAL",schedule:"Sábado 08:30-11:00 A9 · Lun-Vie 08:30-13:00 A9 · Lun-Vie 14:30-17:30 A9",price:"300 Bs"},
+    {name:"Kelly Garcia Guzman",specialty:"NUTRICIONISTA",schedule:"",price:"250 Bs"},
+    {name:"Kristel Jacqueline Cadario Arteaga",specialty:"PSICOLOGÍA",schedule:"Sábado 08:15-12:00 B3",price:"300 Bs"},
+    {name:"Liliana Rocha Beltran",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Miércoles 08:00-10:59 C3",price:"250 Bs"},
+    {name:"Lorena Evelin Urioste Eguez",specialty:"REUMATOLOGÍA",schedule:"Miércoles 18:30-20:00 B10 · Viernes 18:30-20:00 A7",price:"300 Bs"},
+    {name:"Loretta Wendy Rojas Gareca",specialty:"ANESTESIOLOGÍA Y TERAPIA DEL DOLOR",schedule:"",price:"300 Bs"},
+    {name:"Lourdes Ivanna Nuñez Antelo",specialty:"NEUROPEDIATRÍA",schedule:"Viernes 15:00-17:30 C8",price:"250 Bs"},
+    {name:"Lucia Adriana Reynolds Ocampo",specialty:"HEMATOLOGÍA",schedule:"Lunes 10:30-12:30 A4 · Miércoles 18:00-20:00 A4 · Viernes 10:30-12:30 A4",price:"400 Bs"},
+    {name:"Lucia Edith Paz Aguirre",specialty:"MASTOLOGÍA",schedule:"Lunes 09:30-11:00 C1 · Miércoles 09:30-11:00 C1",price:"250 Bs"},
+    {name:"Lucia Richter Paz",specialty:"ONCOLOGÍA CLÍNICA",schedule:"Martes 18:31-20:00 C3 · Jueves 18:30-20:00 B7",price:"500 Bs"},
+    {name:"Lucia Villarroel Salvatierra",specialty:"OFTALMOLOGÍA",schedule:"Lunes 14:00-16:00 B1 · Viernes 12:50-14:30 B1",price:"300 Bs"},
+    {name:"Luis Acha Vargas",specialty:"CIRUGÍA DE CABEZA Y CUELLO",schedule:"Martes 10:00-12:00 A7 · Viernes 10:00-12:00 A7",price:"400 Bs"},
+    {name:"Luis Enrique Llanos Helguero",specialty:"CIRUGÍA TORÁCICA",schedule:"",price:"300 Bs"},
+    {name:"Luis Ernesto Dellien Bianchi",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Martes 14:30-16:00 C9 · Viernes 14:30-16:00 C9",price:"300 Bs"},
+    {name:"Luis Felipe Selum Zabala",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Luis Fernando Vaca Hurtado",specialty:"CIRUGÍA GENERAL",schedule:"Miércoles 16:01-17:30 A1",price:"250 Bs"},
+    {name:"Luis Kushner Dávalos",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"250 Bs"},
+    {name:"Luis Mario Justiniano Dorado",specialty:"CIRUGÍA GENERAL",schedule:"Martes 08:00-09:59 B8 · Viernes 17:01-19:00 C5",price:"250 Bs"},
+    {name:"Luz Mariana Mojica Palacios",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Jueves 16:00-17:59 C2 · Viernes 15:00-18:00 C1",price:"350 Bs"},
+    {name:"Luz Patricia Loredo Vargas",specialty:"INFECTOLOGÍA",schedule:"Martes 08:00-10:00 A7 · Viernes 18:00-20:00 A1",price:"350 Bs"},
+    {name:"Magno Alfredo Rojas Raldes",specialty:"OTORRINOLARINGOLOGÍA",schedule:"Martes 18:00-18:59 A6 · Jueves 14:30-16:00 A6 · Viernes 14:30-15:59 A7",price:"350 Bs"},
+    {name:"Manuel Fernando Martínez Méndez",specialty:"CIRUGÍA GENERAL",schedule:"Lun-Vie 15:00-16:00 S/C",price:"300 Bs"},
+    {name:"Marcelo Alejandro Del Barco Diez Canseco",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Marcelo Ignacio Villalta Vargas",specialty:"UROLOGÍA PEDIÁTRICA",schedule:"Martes 15:00-15:59 A1 · Jueves 15:00-16:00 C9",price:"300 Bs"},
+    {name:"Marcelo Pablo Arano Arenales",specialty:"CARDIOLOGÍA",schedule:"Lunes 11:01-13:00 A6 · Miércoles 11:00-13:00 A6",price:"350 Bs"},
+    {name:"Marcelo Portugal Salvatierra",specialty:"CIRUGÍA PLÁSTICA",schedule:"Martes 16:00-17:00 A7 · Jueves 16:00-17:00 A7",price:"300 Bs"},
+    {name:"Marcia Andrea Copacabana Gonzales Revollo",specialty:"NEUROLOGÍA",schedule:"Martes 17:01-17:59 B2 · Jueves 18:00-20:00 A1",price:"350 Bs"},
+    {name:"Marcia Ximena Serrano Landivar",specialty:"PEDIATRÍA",schedule:"Martes 17:00-20:00 C10 · Jueves 17:00-20:00 C10",price:"250 Bs"},
+    {name:"Marco Antonio Belzu Rodriguez",specialty:"PEDIATRÍA NEONATOLOGÍA",schedule:"Lunes 16:30-18:00 C10 · Martes 16:00-18:00 C9 · Miércoles 16:00-18:00 C10 · Viernes 16:01-18:00 C9",price:"300 Bs"},
+    {name:"Maria del Carmen Barragan Coronado",specialty:"ANESTESIOLOGÍA Y TERAPIA DEL DOLOR",schedule:"",price:"300 Bs"},
+    {name:"Maria Gloria Agreda Vedia",specialty:"NEUMOLOGÍA",schedule:"Lunes 15:01-16:59 B7 · Miércoles 15:01-16:59 B7",price:"350 Bs"},
+    {name:"Maria Ines Cuellar Terrazas",specialty:"MEDICINA INTERNA",schedule:"Lunes 18:00-19:59 A1 · Miércoles 18:00-19:59 B9",price:"300 Bs"},
+    {name:"Maria Patricia Margarita Arteaga Jimenez",specialty:"OTORRINOLARINGOLOGÍA",schedule:"Viernes 15:00-16:59 A6 · Sábado 11:00-12:19 A6",price:"300 Bs"},
+    {name:"Maria Yuly Añez Aguayo",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Sábado 09:00-11:59 C2",price:"350 Bs"},
+    {name:"Maribel Braner Velarde",specialty:"GASTROENTEROLOGÍA",schedule:"Lunes 08:00-10:00 B10 · Martes 10:00-12:00 B10 · Miércoles 08:00-10:00 B10 · Jueves 10:00-12:00 B10 · Viernes 11:00-12:00 B10",price:"300 Bs"},
+    {name:"Mariela del Valle Sanchez Antolinez",specialty:"ENDOCRINOLOGÍA",schedule:"Lunes 16:00-17:59 A6 · Martes 15:01-17:00 A6 · Jueves 13:00-15:00 B6 · Viernes 15:01-17:00 A2 · Sábado 09:00-12:00 C6",price:"350 Bs"},
+    {name:"Mariela Malpartida Vildoso",specialty:"REUMATOLOGÍA",schedule:"Jueves 14:20-15:59 A1",price:"300 Bs"},
+    {name:"Mario Gabriel Cuellar Lens",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Martes 09:00-12:00 C2",price:"250 Bs"},
+    {name:"Marioly Chavez Vincenti",specialty:"PEDIATRÍA",schedule:"Lunes 18:00-20:00 C7 · Martes 11:00-12:00 C9 · Jueves 17:30-20:00 C8 · Viernes 17:00-20:00 C10",price:"300 Bs"},
+    {name:"Martha Ines Zuna Alcoba",specialty:"HEMATOLOGÍA",schedule:"",price:"300 Bs"},
+    {name:"Martha Thais Morales Diaz",specialty:"PSIQUIATRÍA",schedule:"Miércoles 17:00-19:00 A7 · Viernes 10:01-12:00 A6",price:"300 Bs"},
+    {name:"Massiel Karem Delgadillo Nuñez",specialty:"HEMATOLOGÍA Y ONCOLOGÍA PEDIÁTRICA",schedule:"Miércoles 14:00-15:59 C7",price:"350 Bs"},
+    {name:"Maxima Ramos Rocha",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 15:00-18:00 C1 · Jueves 08:00-11:59 C2 · Viernes 08:00-12:00 C2",price:"250 Bs"},
+    {name:"Michelle Jhasmine Navia Espinoza",specialty:"CARDIOLOGÍA",schedule:"Martes 11:01-13:00 C5 · Jueves 11:01-12:59 C5",price:"300 Bs"},
+    {name:"Miguel Alfredo Rivas Cuellar",specialty:"CIRUGÍA GENERAL",schedule:"Lunes 08:00-09:59 A1",price:"300 Bs"},
+    {name:"Miguel Angel Velasco Paniagua",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Viernes 17:00-19:00 B6",price:"300 Bs"},
+    {name:"Mirtha Lenny Jordan Peralta de Camargo",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 16:30-17:30 C3 · Miércoles 16:30-17:30 C3",price:"300 Bs"},
+    {name:"Monica Vera Zalles",specialty:"CIRUGÍA GENERAL",schedule:"Viernes 16:00-16:59 A7",price:"250 Bs"},
+    {name:"Naomi Jenny Hoshino de Nishizawa",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Martes 09:00-11:30 C1 · Miércoles 15:30-18:30 C1 · Viernes 09:00-11:30 C1",price:"300 Bs"},
+    {name:"Natali Sanchez Ortiz",specialty:"NEUROPEDIATRÍA",schedule:"Lunes 18:01-20:00 C10 · Jueves 10:00-12:00 C9",price:"350 Bs"},
+    {name:"Natalia Fernanda Bello Daher",specialty:"GERIATRÍA",schedule:"Viernes 18:00-20:00 B7",price:"400 Bs"},
+    {name:"Nataly Joaquinovna Ibañez Guzman",specialty:"ENDOCRINOLOGÍA",schedule:"Miércoles 14:40-16:00 B9 · Miércoles 16:00-17:00 B9 · Viernes 14:40-16:00 B9 · Viernes 16:00-17:00 B9",price:"300 Bs"},
+    {name:"Nelfy Avalos Lino",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Martes 09:00-11:59 C3 · Viernes 13:00-14:59 C1",price:"250 Bs"},
+    {name:"Nelly Garzon Rivero",specialty:"ENDOCRINOLOGÍA",schedule:"Martes 16:00-19:00 A1 · Miércoles 16:10-17:50 A6",price:"450 Bs"},
+    {name:"Nils Erick Calderon Tejerina",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"",price:"350 Bs"},
+    {name:"Noelia Alejandra Inacio Cardozo",specialty:"MEDICINA INTERNA",schedule:"Martes 08:00-10:00 A2 · Jueves 08:00-10:00 A2 · Sábado 09:00-11:00 A7",price:"300 Bs"},
+    {name:"Pablo Emanuel Justiniano Becerra",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 11:00-12:00 B6 · Viernes 11:00-12:00 B6",price:"300 Bs"},
+    {name:"Pablo Ernesto Sanabria Villarpando",specialty:"DERMATOLOGÍA ADULTO",schedule:"Miércoles 10:30-11:59 C6 · Viernes 10:30-11:59 B8",price:"400 Bs"},
+    {name:"Patricia Santisteban Moron",specialty:"MEDICINA INTERNA",schedule:"Martes 09:00-11:00 A6 · Miércoles 09:00-11:00 A6",price:"250 Bs"},
+    {name:"Paula Alejandra Menacho Butrón",specialty:"ALERGOLOGÍA PEDIÁTRICA",schedule:"Martes 17:01-18:59 C8 · Viernes 17:30-19:00 S/C",price:"350 Bs"},
+    {name:"Paula Carolina Aponte Dellien",specialty:"CIRUGÍA PLÁSTICA",schedule:"",price:"350 Bs"},
+    {name:"Raquel Rivas Yevara",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"Lunes 13:30-16:59 C2 · Miércoles 13:30-16:59 C2 · Viernes 13:30-16:59 C2",price:"250 Bs"},
+    {name:"Raul Adrian Escobar Ugarte",specialty:"CIRUGÍA PLÁSTICA",schedule:"",price:"350 Bs"},
+    {name:"Raul Mancilla Delgado",specialty:"GINECOLOGÍA Y OBSTETRICIA",schedule:"",price:"300 Bs"},
+    {name:"Rene Cardozo Molina",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Miércoles 18:00-20:00 C10",price:"250 Bs"},
+    {name:"Rene Klaus Cronenbold Cabrera",specialty:"PSICOLOGÍA",schedule:"Miércoles 15:00-18:00 B3 · Viernes 08:00-12:00 B3",price:"250 Bs"},
+    {name:"Rene Oswaldo Aguirre Amelunge",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 16:30-18:00 A7",price:"300 Bs"},
+    {name:"Reynaldo De Avila Aburdene",specialty:"PEDIATRÍA",schedule:"",price:"300 Bs"},
+    {name:"Ricardo Villarroel Gutierrez",specialty:"CIRUGÍA GENERAL",schedule:"Martes 19:01-20:00 A1 · Miércoles 18:00-19:00 A1 · Jueves 12:00-14:00 A1 · Viernes 11:00-12:00 A1",price:"300 Bs"},
+    {name:"Roberth Enzo Confessori Sandoval",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 08:00-10:00 C6 · Miércoles 08:00-10:00 C6 · Viernes 08:00-10:00 C6",price:"400 Bs"},
+    {name:"Roberto Carlos Rojas Justiniano",specialty:"NEUROCIRUGÍA",schedule:"",price:"300 Bs"},
+    {name:"Roberto Cristodulo Cortez",specialty:"CARDIOLOGÍA",schedule:"Lunes 18:00-20:00 B2 · Martes 18:00-20:00 B2 · Jueves 18:01-20:00 B2 · Viernes 16:01-18:00 B2",price:"350 Bs"},
+    {name:"Roberto Gamez Arias",specialty:"CIRUGÍA PEDIÁTRICA",schedule:"Miércoles 16:00-17:00 B10",price:"350 Bs"},
+    {name:"Rodrigo Antelo Antelo",specialty:"UROLOGÍA",schedule:"Martes 10:00-12:30 PP · Jueves 10:00-12:30 PP · Viernes 11:00-12:30 PP",price:"350 Bs"},
+    {name:"Rodrigo Fabian Cruz Guerrero",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 15:01-17:00 B6 · Miércoles 17:01-19:00 B6 · Jueves 15:00-17:00 B6",price:"300 Bs"},
+    {name:"Rodrigo Roca Lopez",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 09:00-11:00 C4 · Lunes 16:00-20:00 C4 · Martes 16:00-20:00 C4 · Miércoles 11:00-13:00 C4 · Jueves 16:00-18:00 C4 · Viernes 11:00-13:00 C4",price:"400 Bs"},
+    {name:"Roly Mamani Molina",specialty:"ENDOCRINOLOGÍA PEDIÁTRICA",schedule:"Miércoles 17:30-19:30 B7 · Viernes 16:01-17:59 S/C",price:"350 Bs"},
+    {name:"Romina Raquel Cuellar Rodriguez",specialty:"CIRUGÍA TORÁCICA",schedule:"Martes 17:01-17:59 A2 · Jueves 17:01-17:59 A1",price:"300 Bs"},
+    {name:"Romulo Calvo Bravo",specialty:"CIRUGÍA COLOPROCTOLOGÍA",schedule:"Martes 15:00-17:00 B9 · Jueves 15:00-17:00 B9",price:"250 Bs"},
+    {name:"Ronald Gustavo Duran Saucedo",specialty:"CARDIOLOGÍA",schedule:"Martes 09:00-10:30 C6 · Jueves 09:00-10:30 C8",price:"350 Bs"},
+    {name:"Ronald Sergio Limon Tellez",specialty:"ONCOLOGÍA CLÍNICA",schedule:"Martes 14:00-16:00 A7 · Miércoles 14:00-16:00 A7 · Jueves 14:00-16:00 A7",price:"350 Bs"},
+    {name:"Rosemary Abasto Vega",specialty:"PEDIATRÍA",schedule:"",price:"250 Bs"},
+    {name:"Rosmery Morales Choque",specialty:"ANESTESIOLOGÍA Y TERAPIA DEL DOLOR",schedule:"",price:"350 Bs"},
+    {name:"Roxana Mariela Mendez Monasterio",specialty:"GASTROENTEROLOGÍA",schedule:"",price:"250 Bs"},
+    {name:"Roy Eber Gutierrez Tambo",specialty:"GASTROENTEROLOGÍA",schedule:"Lunes 18:30-20:00 B7 · Miércoles 18:30-19:59 B2 · Viernes 17:30-19:29 A2 · Sábado 10:00-12:00 B2",price:"300 Bs"},
+    {name:"Ruben Anselmo Ordoñez Antacahua",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"",price:"300 Bs"},
+    {name:"Ruvens Carlos Vaca Rivero",specialty:"CARDIOLOGÍA",schedule:"Miércoles 14:00-16:00 C3",price:"350 Bs"},
+    {name:"Samuel Padilla Daza",specialty:"NEUROLOGÍA",schedule:"Lunes 14:00-15:00 B7 · Jueves 14:00-15:00 B8",price:"350 Bs"},
+    {name:"Sandra Karina Chavez Chavez",specialty:"PEDIATRÍA",schedule:"Lunes 16:01-17:59 C7 · Miércoles 16:00-19:00 C7 · Viernes 16:00-19:00 C7",price:"250 Bs"},
+    {name:"Sergio Alejandro Nogales Valencia",specialty:"UROLOGÍA",schedule:"Lunes 18:01-20:00 A8 · Martes 18:00-19:59 A2 · Miércoles 18:01-20:00 A8 · Jueves 18:00-20:00 A6 · Viernes 18:01-20:00 A8",price:"300 Bs"},
+    {name:"Sergio Manuel Ballivian Capriles",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Soledad Porcel",specialty:"GASTROENTEROLOGÍA",schedule:"Martes 13:30-15:00 C3 · Jueves 13:30-15:00 C3",price:"300 Bs"},
+    {name:"Stephanie Yelile Baddour Blacutt",specialty:"PSICOLOGÍA",schedule:"Martes 14:00-17:59 A5 · Jueves 14:00-17:59 A5",price:"350 Bs"},
+    {name:"Tania Susana Pinto Berrios",specialty:"CIRUGÍA PLÁSTICA",schedule:"Martes 13:00-15:00 A6",price:"350 Bs"},
+    {name:"Teresa Susana Mendez Rojas",specialty:"PSICOLOGÍA",schedule:"Viernes 16:00-18:00 PP",price:"300 Bs"},
+    {name:"Valeria Pardo Martinez",specialty:"GASTROENTEROLOGÍA",schedule:"Martes 14:00-16:00 B7 · Jueves 17:00-19:00 C3 · Sábado 08:00-10:00 C3",price:"300 Bs"},
+    {name:"Vanessa Noelia Guthrie Eguez",specialty:"NEUROCIRUGÍA",schedule:"Martes 18:00-20:00 B7 · Jueves 08:00-10:00 B7 · Sábado 10:00-12:00 B7",price:"350 Bs"},
+    {name:"Vania Lucia Peñarrieta Cardona",specialty:"NEUMOLOGÍA PEDIÁTRICA",schedule:"Martes 18:01-20:00 C9 · Viernes 18:01-20:00 C9",price:"350 Bs"},
+    {name:"Varinia Nuñez Pedraza",specialty:"PEDIATRÍA",schedule:"Lunes 13:30-14:30 C7 · Miércoles 13:00-14:00 C7",price:"250 Bs"},
+    {name:"Victor Hugo Montes Velasco",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Lunes 14:00-15:59 C5 · Miércoles 14:30-15:59 C5 · Viernes 18:01-20:00 C4",price:"400 Bs"},
+    {name:"Virna Lissy Severiche Medina",specialty:"CARDIOLOGÍA PEDIÁTRICA",schedule:"Jueves 14:30-15:59 B2",price:"350 Bs"},
+    {name:"Walter Andres Camargo Jordan",specialty:"NEUROLOGÍA",schedule:"Lunes 16:01-17:00 A1 · Martes 16:01-17:00 C3",price:"450 Bs"},
+    {name:"Walter Fabricio Salinas Toconaz",specialty:"CIRUGÍA GENERAL",schedule:"Viernes 16:00-18:00 B7 · Sábado 10:00-12:30 C3",price:"350 Bs"},
+    {name:"Walter Gonzalo Montero Justiniano",specialty:"PEDIATRÍA NEONATOLOGÍA",schedule:"",price:"250 Bs"},
+    {name:"Wilber Amurrio Melgarejo",specialty:"CIRUGÍA GENERAL",schedule:"",price:"250 Bs"},
+    {name:"Wilson Onishi Sadud",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Miércoles 13:00-13:59 C5 · Viernes 13:01-14:59 C6",price:"300 Bs"},
+    {name:"Yenny Viviana Rodriguez Rojas",specialty:"TRAUMATOLOGÍA Y ORTOPEDIA",schedule:"Martes 13:00-14:59 C4 · Jueves 13:00-14:59 C5",price:"300 Bs"},
+    {name:"Yngrid Hurtado Bruckner de Avila",specialty:"GINECOLOGÍA ONCOLÓGICA",schedule:"Jueves 16:00-18:59 C1",price:"350 Bs"},
+    {name:"Yoshimia Patricia Castillo Vacaflor",specialty:"NUTRICIONISTA",schedule:"Lunes 10:00-11:59 C8 · Viernes 08:00-10:00 A6",price:"350 Bs"},
+  ];
+
+  const colorMap = {
+    "CIRUGÍA": "blue", "PEDIATRÍA": "green", "GINECOLOGÍA": "orange",
+    "NEFROLOGÍA": "teal", "ENDOCRINOLOGÍA": "purple", "NEUROCIRUGÍA": "orange",
+    "NEUROLOGÍA": "purple", "UROLOGÍA": "blue", "PSICOLOGÍA": "green",
+    "REUMATOLOGÍA": "teal", "TRANSPLANTE": "purple", "CARDIOLOGÍA": "orange",
+    "TRAUMATOLOGÍA": "blue", "ONCOLOGÍA": "purple", "HEMATOLOGÍA": "teal",
+    "GASTROENTEROLOGÍA": "green", "NEUMOLOGÍA": "teal", "INFECTOLOGÍA": "orange",
+    "DERMATOLOGÍA": "green", "MEDICINA INTERNA": "blue", "NUTRICIONISTA": "green",
+    "OFTALMOLOGÍA": "teal", "OTORRINOLARINGOLOGÍA": "purple", "HEPATOLOGÍA": "orange",
+    "GERIATRÍA": "blue", "ANESTESIOLOGÍA": "teal", "PSIQUIATRÍA": "purple",
+    "FONOAUDIOLOGÍA": "green", "MASTOLOGÍA": "orange",
+  };
+
+  function getColor(specialty) {
+    for (const key in colorMap) {
+      if (specialty.toUpperCase().includes(key)) return colorMap[key];
+    }
+    return "blue";
+  }
+
+  let activeFilter = "";
+
+  function renderCards(data) {
+    const tbody = document.getElementById('spTableBody');
+    const table = document.getElementById('spTable');
+    const noRes = document.getElementById('noResults');
+    const counter = document.getElementById('spCounter');
+    tbody.innerHTML = '';
+    if (counter) counter.textContent = data.length + ' médico' + (data.length !== 1 ? 's' : '');
+
+    if (data.length === 0) {
+      table.style.display = 'none';
+      noRes.style.display = 'block';
+      return;
+    }
+    table.style.display = '';
+    noRes.style.display = 'none';
+
+    const colorClass = { blue:'c-blue', green:'c-green', orange:'c-orange', purple:'c-purple', teal:'c-teal' };
+
+    data.forEach((sp, i) => {
+      const color = getColor(sp.specialty);
+      const cls = colorClass[color] || 'c-blue';
+      const schedHtml = sp.schedule
+        ? sp.schedule.split('·').map(s => `<span>🕐 ${s.trim()}</span>`).join('<br>')
+        : '<span style="color:#bbb">—</span>';
+      const priceHtml = sp.price ? sp.price : '<span style="color:#bbb">—</span>';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td><strong>${sp.name}</strong></td>
+        <td><span class="sp-badge ${cls}">${sp.specialty}</span></td>
+        <td class="sp-schedule-cell">${schedHtml}</td>
+        <td class="sp-price-cell">${priceHtml}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function filterSpecialists() {
+    const q = document.getElementById('spSearch').value.toLowerCase();
+    const filtered = specialists.filter(sp => {
+      const matchQ = !q || sp.name.toLowerCase().includes(q) || sp.specialty.toLowerCase().includes(q);
+      const matchF = !activeFilter || sp.specialty.toUpperCase().includes(activeFilter.toUpperCase()) ||
+                     (activeFilter.includes('|') && activeFilter.split('|').some(f => sp.specialty.toUpperCase().includes(f.toUpperCase())));
+      return matchQ && matchF;
+    });
+    renderCards(filtered);
+  }
+
+  function setFilter(filter, btn) {
+    activeFilter = filter;
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    filterSpecialists();
+  }
+
+  // Initial render
+  renderCards(specialists);
+</script>
+</body>
+</html>
